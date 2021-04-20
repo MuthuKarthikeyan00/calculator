@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+ 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+        <title>calculater</title>
+    </head>
+
+    <script defer>
+        
+
+
+  function send(i)
+  {
+    
+    y=document.getElementById("in2");
+    x=document.getElementById("in");
+    
+      switch(i)
+      {
+          case 1:x.value+=1;break;
+          case 2:x.value+=2;break;
+          case 3:x.value+=3;break;
+          case 4:x.value+=4;break;
+          case 5:x.value+=5;break;
+          case 6:x.value+=6;break;
+          case 7:x.value+=7;break;
+          case 8:x.value+=8;break;
+          case 9:x.value+=9;break;
+          case 0:x.value+=0;break;
+  
+          case '+':x.value+='+';break;
+          case '-':x.value+='-';break;
+          case '*':x.value+='*';break;
+          case '/':x.value+='/';break;
+          case '.':x.value+='.';break;
+  
+          case 'log':
+             
+              result=eval(Math.log10(x.value));
+              y.value=result;
+               break;
+          case '^':
+              result=eval(Math.sqrt(x.value));
+              y.value=result;
+               break;
+          case '1/x':
+              result=eval(1/x.value);
+              y.value=result;
+               break;
+          case 'AC':x.value=""; break;
+  
+          case'=':result=eval(x.value);y.value=result;break;
+      }
+  
+  }
+
+    </script>
+
+ <style>
+     body{
+    background:blueviolet;
+    overflow: hidden;
+ }
+ 
+ button{
+     color: black;
+     width: 70px;
+     height: 70px;
+     border-radius: 50px;
+     border:#fff  solid 2px;
+     text-align: center;
+     font-size: 18px; 
+     background-color: rgb(248, 246, 250); 
+     
+ }
+ .a{
+     padding-top: 4%;
+   
+     text-align: center;
+     justify-content: center;
+  
+     display: flex;
+ }
+ .cal{
+     padding-top: 2%;
+     background:#fff ;
+     border:rgb(4, 143, 124) solid 3px;
+     width: 330px;
+    
+     border-radius: 20px;
+     text-align: center;
+     box-shadow: 1px 1px 30px 1px;
+     z-index: 10px;
+     
+ }
+ input{
+     width: 290px;
+    
+     height: 50px;
+     background-color: rgb(252, 252, 252) ;
+    border: none;
+     color: rgb(7, 0, 0) ;
+     font-weight: bold;
+     font-size: 20px;
+     text-align: right;
+     outline: none;
+ }
+ input:hover{
+     font-size: 30px;
+     text-decoration: underline;
+ }
+ #ho:hover{
+ border: solid 1px rgb(145, 141, 141);
+ }
+ button:hover{
+     font-size: 25px;
+     font-weight: bold;
+     }
+ .foot{
+         
+display: flex;
+justify-content: center;
+margin: 25px 0 0 0;         
+         color: white;
+     
+     }
+ </style>   
+    <body>
+        <div class="a"> 
+            <div class="cal">
+            <table>
+                <tr> <td><input style="color: rgb(60, 8, 109);" id="in2" type="text"></td></tr>
+                <tr> <td><input id="in" type="text"></td></tr>
+            </table>
+       
+            <table>
+            <tr>
+                <td><button id="ho" style="width: 50px;height: 50px;background: rgb(180, 177, 177);" onclick="send('AC')">C</button></td>
+                <td><button id="ho" style="width: 50px;height: 50px;background: rgb(180, 177, 177);" onclick="send('1/x')">1/x</button></td>
+                <td><button id="ho" style="width: 50px;height: 50px;background: rgb(180, 177, 177);"onclick="send('^')">^</button></td>
+                <td><button id="ho" style="width: 50px;height: 50px;background: rgb(10, 173, 141);font-size: 30px;"onclick="send('/')">/</button></td>                
+            </tr>
+            <tr>
+                <td><button onclick="send(7)">7</button></td>
+                <td><button onclick="send(8)">8</button></td>
+                <td><button onclick="send(9)">9</button></td>
+                <td><button id="ho" style="padding-top:10px;width: 50px;height: 50px; background: rgb(231, 196, 121);font-size: 30px;"onclick="send('*')">*</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="send(4)">4</button></td>
+                <td><button onclick="send(5)">5</button></td>
+                <td><button onclick="send(6)">6</button></td>
+                <td><button id="ho" style="width: 50px;height: 50px;background: rgb(223, 120, 120);font-size: 30px;"onclick="send('-')">-</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="send(1)">1</button></td>
+                <td><button onclick="send(2)">2</button></td>
+                <td><button onclick="send(3)">3</button></td>
+                <td><button id="ho" style="width: 50px;height: 50px;background: rgb(148, 117, 204);font-size: 30px;"onclick="send('+')">+</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="send('log')">log</button></td>
+                <td><button onclick="send(0)">0</button></td>
+                <td><button style="font-weight: bold;font-size: 25px;"onclick="send('.')">.</button></td>
+                <td><button id="ho"  style="width: 60px;height: 60px;background: rgb(207, 114, 203);font-size: 30px;"onclick="send('=')">=</button></td>
+            </tr>
+
+        </table>
+    </div></div>
+   
+    <div class="foot">
+        <p>Copyright @ 2021, Designed by Karthik</p>
+    </div>
+
+
+</body>
+
+</html>
